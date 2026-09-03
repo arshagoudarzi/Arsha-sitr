@@ -67,17 +67,17 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-            className={`mb-3 relative px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border border-indigo-100 shadow-sm shadow-indigo-100/50 max-w-[260px] sm:max-w-[300px] text-center z-10 cursor-pointer group`}
+            className={`mb-3 relative px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border border-teal-100 shadow-sm shadow-teal-100/50 max-w-[260px] sm:max-w-[300px] text-center z-10 cursor-pointer group dark:bg-[#10283E]/95 dark:border-teal-500/30 dark:shadow-teal-500/10 transition-colors duration-200`}
             onClick={() => setTipIndex((prev) => (prev + 1) % t.tips.length)}
             title={lang === 'fa' ? 'برای تغییر پیام کلیک کنید' : 'Click to see another tip'}
           >
-            <div className="flex items-center justify-center gap-1.5 text-xs text-indigo-950 font-medium leading-relaxed">
+            <div className="flex items-center justify-center gap-1.5 text-xs text-teal-950 font-medium leading-relaxed dark:text-teal-300 transition-colors duration-200">
               <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0 animate-pulse" />
               <span>{currentTip}</span>
             </div>
             
             {/* Bubble Tail */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r border-b border-indigo-100 rotate-45" />
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r border-b border-teal-100 rotate-45 dark:bg-[#10283E] dark:border-teal-500/30 transition-colors duration-200" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -104,7 +104,7 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
         aria-label={lang === 'fa' ? 'آرشا بات، راهنمای تعاملی سایت' : 'Sparky, interactive portfolio mascot'}
       >
         {/* Soft Ambient Glow under character */}
-        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-28 h-6 bg-indigo-500/15 rounded-full blur-md" />
+        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-28 h-6 bg-teal-500/15 rounded-full blur-md" />
 
         {/* Mascot SVG */}
         <svg
@@ -119,7 +119,7 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
           <g>
             <path
               d="M80 48 V22"
-              stroke="#6366F1"
+              stroke="#14B8A6"
               strokeWidth="4"
               strokeLinecap="round"
             />
@@ -171,7 +171,7 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
           {/* Headphone Arch */}
           <path
             d="M33 70 C33 46 127 46 127 70"
-            stroke="#6366F1"
+            stroke="#14B8A6"
             strokeWidth="3"
             strokeLinecap="round"
             fill="none"
@@ -287,8 +287,8 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
             width="44"
             height="18"
             rx="8"
-            fill="#EEF2FF"
-            stroke="#C7D2FE"
+            fill="#F0FDFA"
+            stroke="#99F6E4"
             strokeWidth="1.5"
           />
           {/* Cute Code symbol </ > on belly */}
@@ -323,7 +323,7 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
               cy="105"
               rx="9"
               ry="7"
-              fill="#EEF2FF"
+              fill="#F0FDFA"
               stroke="#4F46E5"
               strokeWidth="3"
             />
@@ -335,7 +335,7 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
             cy="105"
             rx="9"
             ry="7"
-            fill="#EEF2FF"
+            fill="#F0FDFA"
             stroke="#4F46E5"
             strokeWidth="3"
           />
@@ -351,13 +351,13 @@ export const Mascot: React.FC<MascotProps> = ({ lang, className = '', size = 'md
         </svg>
 
         {/* Small floating badge */}
-        <div className="absolute -top-2 -right-2 w-7 h-7 bg-amber-400 rounded-full flex items-center justify-center text-xs shadow-xs border-2 border-white animate-bounce">
+        <div className="absolute -top-2 -right-2 w-7 h-7 bg-amber-400 rounded-full flex items-center justify-center text-xs shadow-xs border-2 border-white animate-bounce dark:border-[#0E2236] transition-colors duration-200">
           ⚡
         </div>
       </motion.div>
 
       {/* Helper text under mascot */}
-      <span className="mt-2 text-[11px] text-stone-500 font-medium tracking-wide flex items-center gap-1">
+      <span className="mt-2 text-[11px] text-slate-500 font-medium tracking-wide flex items-center gap-1 dark:text-slate-400 transition-colors duration-200">
         <Heart className="w-3 h-3 text-rose-400 fill-rose-400 inline" />
         <span>{lang === 'fa' ? 'برای تعامل کلیک کنید' : 'Click me for fun'}</span>
       </span>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from './types';
 import { translations } from './data/translations';
+import { useTheme } from './theme';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -22,10 +23,12 @@ export default function App() {
       const stored = localStorage.getItem('arsha_portfolio_lang');
       if (stored === 'en' || stored === 'fa') return stored;
     }
-    return 'fa';
+    return 'en';
   });
 
   const [activeSection, setActiveSection] = useState<string>('hero');
+
+  const { theme, toggleTheme } = useTheme();
 
   // Handle language change: persist to localStorage & update URL hash & HTML root
   const handleLanguageChange = (newLang: Language) => {
@@ -85,12 +88,14 @@ export default function App() {
   }, []);
 
   return (
-    <div className={`min-h-screen bg-[#FAF9F5] text-[#1E2024] flex flex-col font-${lang === 'fa' ? 'persian' : 'sans'}`}>
+    <div className="min-h-screen app-grid-bg text-[#1E2024] flex flex-col dark:text-[#E6EDF5] transition-colors duration-300">
       {/* Top Floating / Sticky Header */}
       <Header
         lang={lang}
         onLanguageChange={handleLanguageChange}
         activeSection={activeSection}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
 
       {/* Main Content Sections */}
