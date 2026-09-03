@@ -50,7 +50,7 @@ Never make up facts; if unsure, say so honestly.`;
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3.6-flash',
+      model: 'gemini-2.0-flash',
       contents: [{ role: 'user', parts: [{ text: systemPrompt + '\n\nکاربر: ' + message }] }],
     });
 
