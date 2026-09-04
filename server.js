@@ -50,11 +50,11 @@ Never make up facts; if unsure, say so honestly.`;
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3.6-flash',
+      model: 'gemini-2.0-flash',
       contents: [{ role: 'user', parts: [{ text: systemPrompt + '\n\nکاربر: ' + message }] }],
     });
 
-    const text = response?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const text = response?.text ?? response?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!text) {
       return res.status(502).json({ error: 'The AI returned an empty response. Please try again.' });
     }
