@@ -181,7 +181,7 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {project.results.map((res, i) => (
                     <div key={i} className="p-3.5 rounded-xl bg-white border border-teal-100/80 shadow-2xs dark:bg-[#0E2236] dark:border-teal-500/20 transition-colors duration-200">
-                      <div className="text-2xl font-black text-teal-600 mb-0.5 dark:text-teal-400">
+                      <div className="text-2xl font-black text-teal-600 mb-0.5 dark:text-teal-400" style={{ fontFamily: lang === 'fa' ? 'var(--font-persian)' : 'var(--font-latin)' }}>
                         {res.metric}
                       </div>
                       <div className="text-xs text-slate-600 font-medium dark:text-slate-400 transition-colors duration-200">
